@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!-- Run the map server -->
+    <arg name="vault" default="false" />
+    <arg name="rviz" default="true" />
+    <arg name="smart_planner" default="true" />
+
+    <arg unless="$(arg vault)" name="map_file" value="$(find husky_navigation)/maps/HighBay.yaml"/>
+    <arg     if="$(arg vault)" name="map_file" value="$(find husky_navigation)/maps/Vault.yaml"/>
+
+    <arg unless="$(arg smart_planner)" name="global_planner" value="navfn/NavfnROS"/>
+    <arg     if="$(arg smart_planner)" name="global_planner" value="SBPLLatticePlanner"/>
+
+    <arg unless="$(arg smart_planner)" name="local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+    <arg     if="$(arg smart_planner)" name="local_planner" value="pose_follower/PoseFollower"/>
+
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+    <!--remap from="/lidar/scan" to ="/scan"/-->
+
+    <!--- Run AMCL -->
+    <include file="$(find husky_navigation)/launch/amcl.launch" />
+
+    <!--- Run Move Base -->
+    <include file="$(find husky_navigation)/launch/move_base.launch">
+      <arg name="base_local_planner" value="$(arg local_planner)" />
+      <arg name="base_global_planner" value="$(arg global_planner)" />
+    </include>
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" 
+        args="-d $(find husky_navigation)/config/highbay_nav.rviz"/>
+</launch>

@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- Run the map server -->
+  <arg name="map_file" default="$(find husky_navigation)/maps/Vault_2_9_15.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!--- Run AMCL -->
+  <include file="$(find husky_navigation)/launch/amcl.launch" />
+
+  <node name="amcl_rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find husky_navigation)/config/vault_nav.rviz"/>
+
+</launch>

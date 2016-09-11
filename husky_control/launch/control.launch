@@ -5,6 +5,8 @@
 
   <node name="base_controller_spawner" pkg="controller_manager" type="spawner" args="husky_joint_publisher husky_velocity_controller --shutdown-timeout 3"/>
 
+  <node name="nrg_nav_filter" pkg="husky_navigation" type="nrg_filter.py"/>
+
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
     <rosparam command="load" file="$(find husky_control)/config/localization.yaml" />
   </node>

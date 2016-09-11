@@ -1,5 +1,6 @@
 husky_joint_publisher:
   type: "joint_state_controller/JointStateController"
+#  type: "skid_steer_controller/SkidSteerController"
   publish_rate: 50
 
 husky_velocity_controller:
@@ -23,7 +24,7 @@ husky_velocity_controller:
 
   # Wheel separation and radius multipliers
   wheel_separation_multiplier: 1.875 # default: 1.0
-  wheel_radius_multiplier    : 1.0 # default: 1.0
+  wheel_radius_multiplier    : 0.527 # default: 1.0; changed due to drivetrain modifications
 
   # Velocity and acceleration limits
   # Whenever a min_* is unspecified, default to -max_*

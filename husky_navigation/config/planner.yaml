@@ -3,7 +3,7 @@ recovery_behaviour_enabled: true
 
 NavfnROS:
   allow_unknown: true # Specifies whether or not to allow navfn to create plans that traverse unknown space.
-  default_tolerance: 0.1 # A tolerance on the goal point for the planner.
+  default_tolerance: 0.05 # A tolerance on the goal point for the planner.
 
 TrajectoryPlannerROS:
   # Robot Configuration Parameters
@@ -68,8 +68,8 @@ DWAPlannerROS:
   min_rot_vel: 0.2
 
   # Goal Tolerance Parameters
-  yaw_goal_tolerance: 0.1
-  xy_goal_tolerance: 0.2
+  yaw_goal_tolerance: 0.15  #0.05
+  xy_goal_tolerance: 0.2   #0.05
   latch_xy_goal_tolerance: false
 
   # # Forward Simulation Parameters
@@ -91,3 +91,87 @@ DWAPlannerROS:
 
   # # Oscillation Prevention Parameters
   # oscillation_reset_dist: 0.25 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
+
+SBPLLatticePlanner:
+  
+  allocated_time: 10
+  initial_epsilon: 15.0
+  lethal_obstacle: 20.0
+  environment_type: XYThetaLattice
+  planner_type: ARAPlanner
+  forward_search: false
+
+PoseFollower:
+
+#  acc_lim_x: 2.5
+#  acc_lim_y: 0.2
+#  acc_lim_theta: 1.0
+
+#  escape_vel: -0.1
+
+#  yaw_goal_tolerance: 0.5        #0.05
+#  xy_goal_tolerance: 0.01         #0.10
+#  latch_xy_goal_tolerance: false
+
+#  sim_time: 1.0
+#  sim_granularity: 0.025
+#  angular_sim_granularity: 0.025
+
+#  vx_samples: 3
+#  vtheta_samples: 20
+#  controller_frequency: 20
+
+#  meter_scoring: false
+#  pdist_scale: 0.9              #0.6
+#  gdist_scale: 0.5              #0.8
+#  occdist_scale: 0.01
+#  heading_lookahead: 0.325
+#  heading_scoring: 0.8
+#  dwa: true
+#  publish_cost_grid_pc: false
+#  global_frame_id: odom
+
+#  oscillation_reset_dist: 0.5
+#  prune_plan: true
+#-----------
+
+#  max_vel_x: 0.5
+#  min_vel_x: 0.1
+
+#  max_vel_theta: 1.0
+#  min_vel_theta: -1.0
+#  min_in_place_theta: 0.2
+
+#  holonomic_robot: false
+
+#------------
+
+  k_trans: 3.0
+  k_rot: 3.0
+
+  tolerance_trans: 0.30        #0.3
+  tolerance_rot: 0.30          #0.3
+  tolerance_timeout: 1.5
+
+  holonomic: false
+
+  samples: 100
+
+  max_vel_lin: 1.0
+  max_vel_th: 0.6
+
+  min_vel_lin: 0.1
+  min_vel_th: 0.0
+
+  min_in_place_vel_th: 0.0
+
+  in_place_trans_vel: 0.0
+  trans_stopped_velocity: 1e-4
+  rot_stopped_velocity: 1e-4
+ 
+#  lookahead_count: 5      #1
+#  lookahead_weight: 0.2 
+
+  allow_backwards: true
+  turn_in_place_first: false
+  max_heading_diff_before_moving: 0.17

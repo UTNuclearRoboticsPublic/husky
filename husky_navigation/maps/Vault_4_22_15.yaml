@@ -1,0 +1,7 @@
+image: Vault_4_22_15.pgm
+resolution: 0.020000
+origin: [-1.510000, -1.510000, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

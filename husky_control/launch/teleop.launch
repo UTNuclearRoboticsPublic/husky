@@ -13,6 +13,8 @@
     </node>
 
     <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy"/>
+    <node pkg="teleop_vb_joy" type="teleop_joy_robotiq.py" name="teleop_robotiq_joy"/>
+    <node pkg="teleop_vb_joy" type="teleop_joy_urx.py" name="teleop_ur_joy"/>
   </group>
 
 </launch>
