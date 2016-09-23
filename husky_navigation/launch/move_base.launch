@@ -66,4 +66,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
     <!-- remap from ="odom" to="odometry/filtered" /-->
   </node>
 
+  <node name="estop_monitor" pkg="husky_navigation" type="e-stop_monitor.py"/>
+
 </launch>

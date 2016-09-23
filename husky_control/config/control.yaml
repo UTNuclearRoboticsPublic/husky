@@ -1,10 +1,10 @@
 husky_joint_publisher:
   type: "joint_state_controller/JointStateController"
-#  type: "skid_steer_controller/SkidSteerController"
   publish_rate: 50
 
 husky_velocity_controller:
   type: "diff_drive_controller/DiffDriveController"
+#  type: "skid_steer_controller/SkidSteerController"
   left_wheel: ['front_left_wheel', 'rear_left_wheel']
   right_wheel: ['front_right_wheel', 'rear_right_wheel']
   publish_rate: 50
@@ -23,7 +23,7 @@ husky_velocity_controller:
   estimate_velocity_from_position: false
 
   # Wheel separation and radius multipliers
-  wheel_separation_multiplier: 1.875 # default: 1.0
+  wheel_separation_multiplier: 1.875 # diff_drive - 1.875, skid-steer - 1.0
   wheel_radius_multiplier    : 0.527 # default: 1.0; changed due to drivetrain modifications
 
   # Velocity and acceleration limits

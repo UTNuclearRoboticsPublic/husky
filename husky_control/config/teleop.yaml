@@ -6,7 +6,7 @@ teleop_twist_joy:
   scale_angular: 0.6
   scale_angular_turbo: 1.2
   enable_button: 0
-  enable_turbo_button: 2
+  enable_turbo_button: 1
 joy_node: 
   deadzone: 0.1
   autorepeat_rate: 20

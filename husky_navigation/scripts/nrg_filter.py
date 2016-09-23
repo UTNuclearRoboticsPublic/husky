@@ -23,7 +23,7 @@ from math import cos, sin, pi
 class Filter():
 	def __init__(self):
 		self.stationary = True
-		self.filter = False
+		self.filter = True
                 self.reset_odom = False
 		self.reset_joints = False
 
@@ -45,6 +45,8 @@ class Filter():
                 self.joints_pub = rospy.Publisher("~joints",JointState,queue_size = 10)
                
                 self.encoder_modifier = 0.527
+                self.imu = Imu()
+                self.first = True #initializer variable
 
 	def odom_callback(self,data):
 		odom = data
@@ -84,24 +86,31 @@ class Filter():
 #                self.hec_odom_pub.publish(hec_odom)
 
 	def imu_callback(self,data):
-		imu = data
-		if (self.stationary == True and self.filter == True):
-			covar = list(imu.orientation_covariance)
+                if self.first:
+                        self.imu = data
+                        self.first = False
+
+                if not (self.stationary == True and self.filter == True):
+                        self.imu = data
+                else:
+                        self.imu.angular_velocity.x = 0.0
+                        self.imu.angular_velocity.y = 0.0
+                        self.imu.angular_velocity.z = 0.0
+                        self.imu.linear_acceleration.x = 0.0
+                        self.imu.linear_acceleration.y = 0.0
+                        self.imu.linear_acceleration.z = 0.0
+			covar = list(self.imu.angular_velocity_covariance)
 			covar[0] = 1.0
 			covar[4] = 1.0
 			covar[8] = 1.0
-			imu.orientation_covariance = tuple(covar)
-			covar = list(imu.angular_velocity_covariance)
+			self.imu.angular_velocity_covariance = tuple(covar)
+			covar = list(self.imu.linear_acceleration_covariance)
 			covar[0] = 1.0
 			covar[4] = 1.0
 			covar[8] = 1.0
-			imu.angular_velocity_covariance = tuple(covar)
-			covar = list(imu.linear_acceleration_covariance)
-			covar[0] = 1.0
-			covar[4] = 1.0
-			covar[8] = 1.0
-			imu.linear_acceleration_covariance = tuple(covar)
-		self.imu_pub.publish(imu)
+			self.imu.linear_acceleration_covariance = tuple(covar)
+		self.imu_pub.publish(self.imu)
+                print self.stationary, self.filter
 
 	def joint_callback(self,data):
 		joints = data
