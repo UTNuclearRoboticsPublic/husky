@@ -27,4 +27,4 @@ obstacles_laser:
     laser: {data_type: LaserScan, clearing: true, marking: true, topic: /lidar/scan, inf_is_valid: true}
 
 inflation:
-    inflation_radius: 1.2
+    inflation_radius: 0.4
