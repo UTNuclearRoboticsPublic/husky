@@ -15,7 +15,7 @@ TrajectoryPlannerROS:
 
   max_vel_theta: 1.0
   min_vel_theta: -1.0
-  min_in_place_vel_theta: 0.2
+  min_in_place_vel_theta: 0.1
 
   holonomic_robot: false
   escape_vel: -0.1
@@ -43,7 +43,7 @@ TrajectoryPlannerROS:
   heading_scoring: false  #Whether to score based on the robot's heading to the path or its distance from the path. default false
   heading_scoring_timestep: 0.8   #How far to look ahead in time in seconds along the simulated trajectory when using heading scoring (double, default: 0.8)
   dwa: true #Whether to use the Dynamic Window Approach (DWA)_ or whether to use Trajectory Rollout
-  simple_attractor: false
+  simple_attractor: true
   publish_cost_grid_pc: true  
 
   # Oscillation Prevention Parameters
@@ -68,8 +68,8 @@ DWAPlannerROS:
   min_rot_vel: 0.05
 
   # Goal Tolerance Parameters
-  yaw_goal_tolerance: 0.02  #0.05
-  xy_goal_tolerance: 0.02   #0.05
+  yaw_goal_tolerance: 0.9  #0.05
+  xy_goal_tolerance: 0.08   #0.05
   latch_xy_goal_tolerance: false
 
   # # Forward Simulation Parameters
@@ -90,7 +90,8 @@ DWAPlannerROS:
   # max_scaling_factor: 0.2 # The maximum factor to scale the robot's footprint by
 
   # # Oscillation Prevention Parameters
-  # oscillation_reset_dist: 0.25 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
+  # May lead to jerky motion
+  oscillation_reset_dist: 0.25 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
 
 SBPLLatticePlanner:
   
@@ -146,12 +147,12 @@ PoseFollower:
 
 #------------
 
-  k_trans: 3.0
-  k_rot: 0.1
+  k_trans: 0.5
+  k_rot: 0.5
 
-  tolerance_trans: 0.02        #0.3
-  tolerance_rot: 0.02          #0.3
-  tolerance_timeout: 1.5
+  tolerance_trans: 0.5        #0.3
+  tolerance_rot: 1.0         #0.3
+  tolerance_timeout: 0.5
 
   holonomic: false
 
