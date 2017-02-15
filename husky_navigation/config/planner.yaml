@@ -68,8 +68,8 @@ DWAPlannerROS:
   min_rot_vel: 0.05
 
   # Goal Tolerance Parameters
-  yaw_goal_tolerance: 0.9  #0.05
-  xy_goal_tolerance: 0.08   #0.05
+  yaw_goal_tolerance: 0.8  #0.05
+  xy_goal_tolerance: 0.1   #0.05
   latch_xy_goal_tolerance: false
 
   # # Forward Simulation Parameters
@@ -90,8 +90,7 @@ DWAPlannerROS:
   # max_scaling_factor: 0.2 # The maximum factor to scale the robot's footprint by
 
   # # Oscillation Prevention Parameters
-  # May lead to jerky motion
-  oscillation_reset_dist: 0.25 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
+  oscillation_reset_dist: 0.5 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
 
 SBPLLatticePlanner:
   
@@ -174,5 +173,5 @@ PoseFollower:
 #  lookahead_weight: 0.2 
 
   allow_backwards: true
-  turn_in_place_first: false
+  turn_in_place_first: true
   max_heading_diff_before_moving: 0.17
