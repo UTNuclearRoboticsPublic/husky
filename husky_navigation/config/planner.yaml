@@ -3,7 +3,7 @@ recovery_behavior_enabled: false
 
 NavfnROS:
   allow_unknown: true # Specifies whether or not to allow navfn to create plans that traverse unknown space.
-  default_tolerance: 0.04 # A tolerance on the goal point for the planner.
+  default_tolerance: 0.05 # A tolerance on the goal point for the planner.
 
 TrajectoryPlannerROS:
   # Robot Configuration Parameters
@@ -103,15 +103,15 @@ SBPLLatticePlanner:
 
 PoseFollower:
 
-#  acc_lim_x: 2.5
-#  acc_lim_y: 0.2
-#  acc_lim_theta: 1.0
+  acc_lim_x: 2.0
+  acc_lim_y: 0.2
+  acc_lim_theta: 1.0
 
 #  escape_vel: -0.1
 
-#  yaw_goal_tolerance: 0.5        #0.05
-#  xy_goal_tolerance: 0.01         #0.10
-#  latch_xy_goal_tolerance: false
+  yaw_goal_tolerance: 0.05        #0.05
+  xy_goal_tolerance: 0.1         #0.10
+  latch_xy_goal_tolerance: false
 
 #  sim_time: 1.0
 #  sim_granularity: 0.025
@@ -149,8 +149,8 @@ PoseFollower:
   k_trans: 0.5
   k_rot: 0.5
 
-  tolerance_trans: 0.5        #0.3
-  tolerance_rot: 1.0         #0.3
+  tolerance_trans: 0.3        #0.3
+  tolerance_rot: 0.3         #0.3
   tolerance_timeout: 0.5
 
   holonomic: false
