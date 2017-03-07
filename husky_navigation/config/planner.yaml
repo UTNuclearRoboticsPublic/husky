@@ -3,7 +3,7 @@ recovery_behavior_enabled: false
 
 NavfnROS:
   allow_unknown: true # Specifies whether or not to allow navfn to create plans that traverse unknown space.
-  default_tolerance: 0.05 # A tolerance on the goal point for the planner.
+  default_tolerance: 0.08 # A tolerance on the goal point for the planner.
 
 TrajectoryPlannerROS:
   # Robot Configuration Parameters
@@ -105,11 +105,11 @@ PoseFollower:
 
   acc_lim_x: 2.0
   acc_lim_y: 0.2
-  acc_lim_theta: 1.0
+  acc_lim_theta: 0.3
 
 #  escape_vel: -0.1
 
-  yaw_goal_tolerance: 0.05        #0.05
+  yaw_goal_tolerance: 0.3        #0.05
   xy_goal_tolerance: 0.1         #0.10
   latch_xy_goal_tolerance: false
 
@@ -147,9 +147,9 @@ PoseFollower:
 #------------
 
   k_trans: 0.5
-  k_rot: 0.5
+  k_rot: 1
 
-  tolerance_trans: 0.3        #0.3
+  tolerance_trans: 0.1        #0.3
   tolerance_rot: 0.3         #0.3
   tolerance_timeout: 0.5
 
@@ -173,5 +173,5 @@ PoseFollower:
 #  lookahead_weight: 0.2 
 
   allow_backwards: true
-  turn_in_place_first: true
+  turn_in_place_first: false
   max_heading_diff_before_moving: 0.17
