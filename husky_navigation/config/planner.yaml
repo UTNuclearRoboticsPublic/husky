@@ -110,7 +110,7 @@ PoseFollower:
 #  escape_vel: -0.1
 
   yaw_goal_tolerance: 0.3        #0.05
-  xy_goal_tolerance: 0.1         #0.10
+  xy_goal_tolerance: 0.2         #0.10
   latch_xy_goal_tolerance: false
 
 #  sim_time: 1.0
@@ -149,7 +149,7 @@ PoseFollower:
   k_trans: 0.5
   k_rot: 1
 
-  tolerance_trans: 0.1        #0.3
+  tolerance_trans: 0.2        #0.3
   tolerance_rot: 0.3         #0.3
   tolerance_timeout: 0.5
 
@@ -157,7 +157,7 @@ PoseFollower:
 
   samples: 100
 
-  max_vel_lin: 1.0
+  max_vel_lin: 1.5
   max_vel_th: 0.6
 
   min_vel_lin: 0.1
