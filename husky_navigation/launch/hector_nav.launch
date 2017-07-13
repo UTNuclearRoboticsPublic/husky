@@ -22,4 +22,7 @@
     <!-- launch teleop -->
     <include file="$(find husky_control)/launch/teleop.launch" />
 
+    <!-- Run the script to launch the lidar scan filter -->
+    <node name="scan_filtered" pkg="laser_filters" type="apply_filter.sh" />
+
 </launch>
