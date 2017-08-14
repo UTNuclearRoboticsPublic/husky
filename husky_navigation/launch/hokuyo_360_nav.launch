@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!--- Run vigir_cloud_to_planar_scan - periodic_aggregator -->
+    <include file="$(find vigir_cloud_to_planar_scan)/launch/periodic_aggregator.launch" />
+
+    <!--- Run laser_stitcher - back and forth scan -->
+    <include file="$(find laser_stitcher)/launch/urscript_manager.launch" />
+</launch>
