@@ -19,7 +19,4 @@
   <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" 
         args="-d $(find hector_slam_launch)/rviz_cfg/nav_demo.rviz"/>
 
-  <!-- Throttle nodes with high CPU usage -->
-  <node name="throttle_cpu" pkg="vaultbot_irp" type="throttle_cpu.py" />
-
 </launch>
