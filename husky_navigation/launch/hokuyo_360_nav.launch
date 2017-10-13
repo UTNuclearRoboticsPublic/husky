@@ -1,8 +1,11 @@
 <?xml version="1.0"?>
 
 <launch>
-    <!--- Run vigir_cloud_to_planar_scan - periodic_aggregator -->
-    <include file="$(find vigir_cloud_to_planar_scan)/launch/periodic_aggregator.launch" />
+    <!--- Run the cloud_to_laserscan script -->
+    <node name="cloud_to_laserscan" pkg="laser_filters" type="cloud_to_laserscan.py" />
+
+    <!--- Run the polygon_filter script -->
+    <node name="polygon_filter" pkg="laser_filters" type="polygon_filter.py" />
 
     <!--- Run laser_stitcher - back and forth scan -->
     <include file="$(find laser_stitcher)/launch/urscript_manager.launch" />
