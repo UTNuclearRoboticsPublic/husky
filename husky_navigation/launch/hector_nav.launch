@@ -15,4 +15,5 @@
   </include>
 
   <include file="$(find husky_navigation)/launch/move_base.launch"/>
+
 </launch>

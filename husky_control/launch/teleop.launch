@@ -12,7 +12,7 @@
       <param name="dev" value="$(arg joy_dev)" />
     </node>
 
-    <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy"/>
+    <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy" output="screen"/>
 
     <node pkg="vaultbot_teleop" type="teleop_joy_robotiq.py" name="teleop_robotiq_joy">
       <param name="/teleop_joy_robotiq/max_nav_speed" type="double" value="0.5"/>
