@@ -14,10 +14,6 @@
 
     <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy" />
 
-    <node pkg="vaultbot_teleop" type="teleop_joy_robotiq.py" name="teleop_robotiq_joy">
-      <param name="/teleop_joy_robotiq/max_nav_speed" type="double" value="0.5"/>
-    </node>
-
     <node pkg="vaultbot_teleop" type="teleop_ur_joy" name="teleop_ur_and_stop_joy" output="screen">
       <param name="target_link" type="string" value="left_ur5_base_link"/>
       <param name="source_link_left" type="string" value="left_ur5_ee_link"/>
