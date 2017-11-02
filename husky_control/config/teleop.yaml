@@ -3,10 +3,10 @@ teleop_twist_joy:
   scale_linear: 0.4
   scale_linear_turbo: 0.6
   axis_angular: 0
-  scale_angular: 0.6
-  scale_angular_turbo: 0.8
+  scale_angular: 0.12
+  scale_angular_turbo: 0.15
   enable_button: 0
-  enable_turbo_button: 1
+  enable_turbo_button: 0
 joy_node: 
   deadzone: 0.1
   autorepeat_rate: 20
@@ -17,5 +17,5 @@ teleop_ur_joy:
   preset1_button: 3
   preset2_button: 1
   linear_velocity: 0.1
-  rotational_velocity: 0.1
-  acceleration: 0.02
+  rotational_velocity: 0.02
+  acceleration: 0.01

@@ -1,6 +1,6 @@
 global_frame: map
 rolling_window: true
-always_send_full_costmaps: true
+always_send_full_costmaps: false
 
 plugins:
   - {name: obstacles_laser,           type: "costmap_2d::ObstacleLayer"}
