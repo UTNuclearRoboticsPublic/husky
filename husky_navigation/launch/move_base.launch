@@ -59,7 +59,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
     <param name="global_costmap/height" value="100.0" if="$(arg no_static_map)"/>
 
     <!-- Remap into namespace for cmd_vel_mux switching -->
-    <remap from="cmd_vel" to="~cmd_vel" />
+    <!-- remap from="cmd_vel" to="~cmd_vel" -->
 
     <!-- Remap to get filtered odometry -->
     <!-- remap from ="odom" to="odometry/filtered" /-->
