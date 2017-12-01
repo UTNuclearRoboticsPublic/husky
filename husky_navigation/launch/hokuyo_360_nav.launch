@@ -10,4 +10,7 @@
     <!--- Run laser_stitcher - back and forth scan -->
     <include file="$(find laser_stitcher)/launch/urscript_manager.launch" />
 
+    <!--- Launch the hokuyo lidar -->
+    <include file="$(find urg_node)/launch/urg_lidar.launch" />
+
 </launch>
