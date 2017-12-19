@@ -111,7 +111,7 @@ PoseFollower:
 
 #  escape_vel: -0.1
 
-  yaw_goal_tolerance: 0.02        #0.05
+  yaw_goal_tolerance: 0.05        #0.05
   xy_goal_tolerance: 0.05        #0.10
   latch_xy_goal_tolerance: false
 

@@ -22,7 +22,7 @@ static:
 
 obstacles_laser:
     observation_sources: laser
-    laser: {data_type: LaserScan, clearing: true, marking: true, topic: /lidar/scan, inf_is_valid: true}
+    laser: {data_type: LaserScan, clearing: true, marking: true, topic: /scan360, inf_is_valid: true}
 
 inflation:
     inflation_radius: 0.15
