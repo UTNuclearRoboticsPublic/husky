@@ -17,4 +17,7 @@
   <include file="$(find husky_navigation)/launch/move_base.launch"/>
 
   <include file="$(find urg_node)/launch/urg_lidar.launch" />
+
+  <include file="$(find 3d_navigation)/launch/3d_nav.launch" />
+
 </launch>
