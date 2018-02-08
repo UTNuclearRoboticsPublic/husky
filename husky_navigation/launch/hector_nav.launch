@@ -18,7 +18,7 @@
 
   <include file="$(find urg_node)/launch/urg_lidar.launch" />
 
-  <include file="$(find 3d_navigation)/launch/3d_nav.launch" />
+  <include file="$(find nav_3d)/launch/nav_3d.launch" />
 
   <include file="$(find laser_stitcher)/launch/wait_for_request.launch" />
 
