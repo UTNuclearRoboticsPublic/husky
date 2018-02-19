@@ -1,11 +1,10 @@
 #Standard footprint
-footprint: [[-0.55, -0.35], [-0.55, 0.35], [0.16, 0.49], [0.57, 0.35], [0.57, -0.35], [0.1, -0.47]]
-
-footprint_padding: 0.01
+footprint_topic: /nav_3d/robot_footprint
+published_footprint_topic: /nav_3d/robot_footprint
 
 #robot_base_frame: base_link
 robot_base_frame: base_link
-update_frequency: 4.0
+update_frequency: 1.0
 publish_frequency: 6.0
 transform_tolerance: 5.0
 
@@ -22,7 +21,7 @@ static:
 
 obstacles_laser:
     observation_sources: laser
-    laser: {data_type: LaserScan, clearing: true, marking: true, topic: /scan360, inf_is_valid: true}
+    laser: {data_type: LaserScan, clearing: true, marking: true, topic: /nav_3d/scan360, inf_is_valid: true}
 
 inflation:
     inflation_radius: 0.15
