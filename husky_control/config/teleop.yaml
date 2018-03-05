@@ -10,12 +10,3 @@ teleop_twist_joy:
 joy_node: 
   deadzone: 0.1
   autorepeat_rate: 20
-teleop_ur_joy:
-  longitudinal_axis: 7
-  lateral_axis: 6
-  trans_rot_toggle: 2
-  preset1_button: 3
-  preset2_button: 1
-  linear_velocity: 0.1
-  rotational_velocity: 0.02
-  acceleration: 0.01
