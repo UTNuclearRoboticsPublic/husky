@@ -12,8 +12,10 @@
       <param name="dev" value="$(arg joy_dev)" />
     </node>
 
-    <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy"/>
-
   </group>
+
+  <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_twist_joy" >
+    <remap from="joy" to="joy_teleop/joy"/>
+  </node>
 
 </launch>
