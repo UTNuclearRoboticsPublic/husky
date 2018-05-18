@@ -16,10 +16,12 @@
 
   <include file="$(find husky_navigation)/launch/move_base.launch"/>
 
+<!--
   <include file="$(find urg_node)/launch/urg_lidar.launch" />
 
   <include file="$(find nav_3d)/launch/nav_3d.launch" />
 
   <include file="$(find laser_stitcher)/launch/wait_for_request.launch" />
+ -->
 
 </launch>
