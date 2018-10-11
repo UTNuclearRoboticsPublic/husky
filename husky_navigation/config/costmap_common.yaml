@@ -1,6 +1,6 @@
 #Standard footprint
 footprint_topic: /nav_3d/robot_footprint
-published_footprint_topic: /nav_3d/robot_footprint
+#published_footprint_topic: /nav_3d/robot_footprint
 
 #robot_base_frame: base_link
 robot_base_frame: base_link
@@ -21,7 +21,7 @@ static:
 
 obstacles_laser:
     observation_sources: laser
-    laser: {data_type: LaserScan, clearing: true, marking: true, topic: /lidar/scan, inf_is_valid: true}
+    laser: {data_type: LaserScan, clearing: true, marking: true, topic: /nav_3d/live_scan, inf_is_valid: true}
 
 inflation:
-    inflation_radius: 0.15
+    inflation_radius: 0.05
