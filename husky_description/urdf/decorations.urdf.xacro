@@ -91,35 +91,6 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
       <child link="rear_bumper_link" />
     </joint>
 
-    <!-- Spawn the top plate -->
-    <link name="top_plate_link">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://husky_description/meshes/top_plate.dae" />
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="package://husky_description/meshes/top_plate.dae" />
-        </geometry>
-      </collision>
-      <collision>
-        <!-- Extra collision tag for widgets on top plate -->
-        <geometry>
-          <box size="0.32 0.41 0.09" rpy="0 0 0"/>
-        </geometry>
-      </collision>
-    </link>
-
-    <!-- Attach top plate -->
-    <joint name="top_plate_joint" type="fixed">
-      <parent link="base_link" />
-      <child link="top_plate_link"/>
-      <origin xyz="0.0812 0 0.245" rpy="0 0 0"/>
-    </joint>
-
   </xacro:macro>
 
 </robot>
